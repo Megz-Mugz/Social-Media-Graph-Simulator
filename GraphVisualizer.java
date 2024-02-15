@@ -16,7 +16,7 @@ public class GraphVisualizer extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        Graph graph = Main.getGraph();
+        Graph graph = CreateGraph.getGraph();
 
         Pane pane = new Pane();
         Map<String, Circle> nodeCircles = new HashMap<>();

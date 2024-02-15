@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Main {
+public class CreateGraph {
 
     private static Graph graph = new Graph();
 
@@ -11,8 +11,8 @@ public class Main {
     public static void populateGraph() {
         Random rand = new Random(); // create instance of Random class
 
-        // Random number of users between 5 and 10
-        int randomNum = 5 + rand.nextInt(6);
+        // Random number of users between 30 and 100
+        int randomNum = 30 + rand.nextInt(71 - 1);
 
         // Add users
         for (int i = 1; i <= randomNum; i++) {
@@ -26,8 +26,9 @@ public class Main {
                 if (i != j) {
                     String user1 = "User" + i;
                     String user2 = "User" + j;
-                    // This randomly decides whether to add a follow relationship, to make it less deterministic
-                    if (rand.nextBoolean()) {
+                    // 20% chance that user1 will be following user2
+                    int x = 0 + rand.nextInt(5 - 1);
+                    if (x == 1) {
                         graph.addFollowRelationship(user1, user2);
                     }
                 }
